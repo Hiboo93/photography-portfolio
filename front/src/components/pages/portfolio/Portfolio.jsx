@@ -3,7 +3,9 @@ import React from 'react'
 function Portfolio() {
   return (
     <section className='section bg-green-200 '>
-      <h1>Portfolio</h1>
+      <div className="container mx-auto h-full relative">
+
+      </div>
     </section>
   )
 }
