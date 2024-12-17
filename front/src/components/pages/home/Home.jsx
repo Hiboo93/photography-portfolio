@@ -1,13 +1,22 @@
 import React from "react";
 import ButtonRelume from "../../common/design-system/Button/ButtonRelume.jsx";
 
+import { motion } from "motion/react";
+import { transition1 } from "../../transition";
+
 import { Link } from "react-router-dom";
 
 import WomanImg from "../../../assets/img/home/woman.png";
 
 function Home() {
   return (
-    <section className="section ">
+    <motion.section
+      className="section"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={transition1}
+    >
       <div className="container mx-auto h-full relative">
         {/* text & img wrapper */}
         <div className="flex flex-col justify-center">
@@ -28,12 +37,12 @@ function Home() {
           {/*  image  */}
           <div className="flex justify-end max-h-96 lg:max-h-max">
             <div className="relative lg:-right-40 overflow-hidden">
-              <img src={WomanImg} alt="women"/>
+              <img src={WomanImg} alt="women" />
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
