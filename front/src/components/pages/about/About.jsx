@@ -18,7 +18,7 @@ function About() {
           {/* text */}
           <div className="flex-1 pt-36 pb-14 lg:pt-0 lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start">
             <h1 className="h1">About Me</h1>
-            <p className="mb-1 max-w-sm">
+            <p className="mb-12 max-w-sm">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.{" "}
               <b>Dolorum et tempora saepe quod amet.</b> Sed sint suscipit
               repellendus
@@ -30,7 +30,7 @@ function About() {
             </p>
             <br />
             <ButtonRelume>
-              <Link to={"/portfolio"}>View my Work</Link>
+              <Link to={"/portfolio"}>VIEW MY WORK</Link>
             </ButtonRelume>
           </div>
         </div>
