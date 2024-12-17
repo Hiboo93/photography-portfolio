@@ -1,8 +1,6 @@
-import { Button } from "@relume_io/relume-ui";
 import Header from "./components/common/layout/Header.jsx";
 
 import { BrowserRouter } from "react-router-dom";
-import { motion } from "motion/react";
 import AnimeRoutes from "./components/common/design-system/AnimeRoutes";
 
 export default function App() {
