@@ -8,8 +8,11 @@ import { Link } from "react-router-dom";
 import ButtonRelume from "../../common/design-system/Button/ButtonRelume.jsx";
 
 import WomanImg from "../../../assets/img/about/woman.png";
+import { useCursorContext } from "../../context/CursorContext.jsx";
 
 function About() {
+  const { mouseEnterHandler, mouseLeaveHandler } = useCursorContext();
+
   return (
     <motion.section
       initial={{ opacity: 0, y: "100%" }}
@@ -18,7 +21,11 @@ function About() {
       transition={transition1}
       className="section"
     >
-      <div className="container mx-auto h-full relative">
+      <div
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
+        className="container mx-auto h-full relative"
+      >
         {/* text & img wrapper */}
         <div className="flex flex-col lg:flex-row h-full items-center justify-center gap-x-24 text-center lg:text-left lg:pt-16">
           {/*  image  */}

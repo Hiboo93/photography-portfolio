@@ -5,8 +5,11 @@ import { motion } from "motion/react";
 import { transition1 } from "../../transition";
 
 import WomanImg from "../../../assets/img/contact/woman.png";
+import { useCursorContext } from "../../context/CursorContext.jsx";
 
 function Contact() {
+  const { mouseEnterHandler, mouseLeaveHandler } = useCursorContext();
+
   return (
     <motion.section
       initial={{ opacity: 0, y: "100%" }}
@@ -28,7 +31,11 @@ function Contact() {
             BG
           </motion.div>
           {/* text & form */}
-          <div className="lg:flex-1 lg:pt-32 px-4">
+          <div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            className="lg:flex-1 lg:pt-32 px-4"
+          >
             <h1 className="h1">Contact me</h1>
             <p className="mb-12">I would love to get suggestions from you.</p>
             <form className="">
@@ -56,10 +63,12 @@ function Contact() {
           </div>
           {/* image */}
           <motion.div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
             initial={{ opacity: 0, y: "100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "100%" }}
-            transition={{transition: transition1, duration: 1.5}}
+            transition={{ transition: transition1, duration: 1.5 }}
             className="lg:flex-1 my-3"
           >
             <img src={WomanImg} alt="woman" />
