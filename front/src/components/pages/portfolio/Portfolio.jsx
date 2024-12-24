@@ -10,8 +10,11 @@ import Image1 from "../../../assets/img/portfolio/1.png";
 import Image2 from "../../../assets/img/portfolio/2.png";
 import Image3 from "../../../assets/img/portfolio/3.png";
 import Image4 from "../../../assets/img/portfolio/4.png";
+import { useCursorContext } from "../../context/CursorContext.jsx";
 
 function Portfolio() {
+  const { mouseEnterHandler, mouseLeaveHandler } = useCursorContext();
+
   return (
     <motion.section
       initial={{ opacity: 0, y: "100%" }}
@@ -24,6 +27,8 @@ function Portfolio() {
         <div className="flex flex-col lg:flex-row h-full items-center justify-start gap-x-24 text-center lg:text-left pt-24 lg:pt-36 pb-8">
           {/* text */}
           <motion.div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
             initial={{ opacity: 0, y: "-80%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-80%" }}
@@ -46,7 +51,11 @@ function Portfolio() {
             </ButtonRelume>
           </motion.div>
           {/* image grid */}
-          <div className="my-8 grid grid-cols-2 lg:gap-2">
+          <div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            className="my-8 grid grid-cols-2 lg:gap-2"
+          >
             {/* image */}
             <div className="max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
               <img
